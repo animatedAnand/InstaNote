@@ -1,6 +1,7 @@
 package com.example.instanote.Adapter;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,6 +39,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         ,parent,false));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
         NotesModel cur_note=list.get(position);
@@ -51,7 +54,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         {
             holder.iv_pin.setImageResource(0);
         }
-
+        int color_code=getRandomColor();
+        holder.cv_note_item.setCardBackgroundColor(holder.itemView.getResources().getColor(color_code,null));
     }
     private int getRandomColor()
     {
@@ -65,7 +69,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
 
         Random random=new Random();
         int random_color=random.nextInt(color_code.size());
-        return random_color;
+        return color_code.get(random_color);
     }
 
     @Override

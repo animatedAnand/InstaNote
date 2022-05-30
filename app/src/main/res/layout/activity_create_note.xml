@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateNoteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="6dp">
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter title"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/iv_save_note"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_save"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter notes here"
+        android:gravity="center_horizontal"
+        android:layout_margin="12dp"/>
+
+</LinearLayout>
