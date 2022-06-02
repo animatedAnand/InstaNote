@@ -56,6 +56,19 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         }
         int color_code=getRandomColor();
         holder.cv_note_item.setCardBackgroundColor(holder.itemView.getResources().getColor(color_code,null));
+        holder.cv_note_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(cur_note);
+            }
+        });
+        holder.cv_note_item.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                listener.onLongClick(cur_note, holder.cv_note_item);
+                return true;
+            }
+        });
     }
     private int getRandomColor()
     {
@@ -75,6 +88,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
     @Override
     public int getItemCount() {
         return list.size();
+    }
+    public void filter_list(List<NotesModel> filtered_list)
+    {
+        list=filtered_list;
+        notifyDataSetChanged();
     }
 }
 class NotesViewHolder extends RecyclerView.ViewHolder
