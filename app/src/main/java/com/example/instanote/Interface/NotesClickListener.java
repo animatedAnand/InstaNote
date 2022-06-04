@@ -1,4 +1,4 @@
-package com.example.instanote;
+package com.example.instanote.Interface;
 
 import androidx.cardview.widget.CardView;
 

@@ -1,11 +1,10 @@
-package com.example.instanote;
+package com.example.instanote.Activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.app.Activity;
@@ -17,9 +16,10 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.instanote.Adapter.NotesAdapter;
-import com.example.instanote.Database.MainDAO;
 import com.example.instanote.Database.RoomDB;
 import com.example.instanote.Models.NotesModel;
+import com.example.instanote.Interface.NotesClickListener;
+import com.example.instanote.R;
 import com.example.instanote.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -31,11 +31,19 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     RoomDB database;
     NotesModel selected_note;
     List<NotesModel> list=new ArrayList<>();
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binder=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binder.getRoot());
+        getSupportActionBar().hide();
 
         database=RoomDB.getInstance(this);
         list= database.mainDAO().getall();
@@ -45,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         binder.fabAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,CreateNoteActivity.class);
+                Intent intent=new Intent(MainActivity.this, CreateNoteActivity.class);
                 startActivityForResult(intent,101);
             }
         });

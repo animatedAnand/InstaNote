@@ -1,4 +1,4 @@
-package com.example.instanote;
+package com.example.instanote.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +24,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binder = ActivityCreateNoteBinding.inflate(getLayoutInflater());
         setContentView(binder.getRoot());
+        getSupportActionBar().hide();
         note = new NotesModel();
         try {
             note = (NotesModel) getIntent().getSerializableExtra("old_note");

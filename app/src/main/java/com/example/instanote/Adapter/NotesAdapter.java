@@ -14,7 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.instanote.Models.NotesModel;
-import com.example.instanote.NotesClickListener;
+import com.example.instanote.Interface.NotesClickListener;
 import com.example.instanote.R;
 
 import java.util.ArrayList;
@@ -79,6 +79,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         color_code.add(R.color.color4);
         color_code.add(R.color.color5);
         color_code.add(R.color.color6);
+        color_code.add(R.color.color7);
 
         Random random=new Random();
         int random_color=random.nextInt(color_code.size());

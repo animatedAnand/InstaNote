@@ -10,8 +10,10 @@
 
     <color name="color1">#F44336</color>
     <color name="color2">#FFC107</color>
-    <color name="color3">#B61B1B</color>
+    <color name="color3">#009688</color>
     <color name="color4">#3F51B5</color>
-    <color name="color5">#009688</color>
-    <color name="color6">#03A9F4</color>
+    <color name="color5">#9C27B0</color>
+    <color name="color6">#FF9800</color>
+    <color name="color7">#FF5722</color>
+
 </resources>

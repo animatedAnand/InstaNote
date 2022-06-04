@@ -5,16 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".MainActivity">
+    android:focusableInTouchMode="true"
+    tools:context=".Activity.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_insta_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="12dp"
+        android:text="InstaNote"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_search_view"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_insta_note"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/search_view_bg"
         app:iconifiedByDefault="false"
-        app:queryHint="Search note.."
-        android:layout_margin="8dp"
-        android:background="@color/white"/>
+        app:queryHint="Search note.." />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/sv_search_view"
@@ -30,6 +46,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
+        android:backgroundTint="#FFEB3B"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
