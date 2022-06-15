@@ -46,10 +46,10 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
-        android:backgroundTint="#FFEB3B"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/color6"
         android:src="@drawable/ic_add" />
 
 </RelativeLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="6dp"
-    android:background="@color/black"
+    android:background="@color/color6"
     tools:context=".Activity.CreateNoteActivity">
 
     <TextView
@@ -16,8 +16,9 @@
         android:gravity="center_horizontal"
         android:padding="12dp"
         android:text="Create A New Note"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        android:elevation="12dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <LinearLayout
