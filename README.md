@@ -4,8 +4,6 @@
 InstaNote Android application provides an easy to use interface to instantly create/fetch notes.
 ## Screenshots
 
-![Screenshot_2022-06-16-15-34-05-473_com example instanote](https://user-images.githubusercontent.com/90234695/174262638-52f73d64-3d37-49de-941b-f76c8faebade.png)
-
 
 ## 🚀 About Me
 Hello! I am Abhayanand Kumar.
